@@ -42,7 +42,9 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@bitauth/libauth": "^1.17.1"
+    "@types/node": "^14.14.0",
+    "@bitauth/libauth": "^1.17.1",
+    "axios": "^0.21.0"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
@@ -53,6 +55,7 @@
     "codecov": "^3.5.0",
     "cspell": "^4.1.0",
     "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^8.2.0",
     "eslint": "^7.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-eslint-comments": "^3.2.0",

@@ -6,4 +6,5 @@ test
 src/**.js
 coverage
 *.log
+*.env
 yarn.lock
