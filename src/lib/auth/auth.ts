@@ -26,4 +26,14 @@ export default class Auth {
       return data.token
     });
   }
+
+  async sendPasswordResetEmail(email: string): Promise<void> {
+    await this.http({
+      url: '/auth/forgot',
+      method: 'POST',
+      data: {
+        email
+      }
+    })
+  }
 }
