@@ -1,3 +1,4 @@
+/* eslint-disable functional/immutable-data */
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable functional/no-this-expression */
 /* eslint-disable functional/no-class */
@@ -7,6 +8,7 @@ import ClientOptions from '../shared/clientOptions';
 
 export default class Auth {
   http: AxiosInstance;
+  token: string
 
   constructor(options: ClientOptions) {
     this.http = axios.create({
@@ -14,16 +16,27 @@ export default class Auth {
     });
   }
 
-  login(email: string, password: string): Promise<string> {
-    return this.http({
+  async login(email: string, password: string): Promise<string> {
+    const { data } = await this.http({
       url: `/auth`,
       method: 'POST',
       data: {
         email,
         password,
       },
-    }).then(async ({ data }) => {
-      return data.token
     });
+    this.token = data.token
+    return data.token;
+  }
+
+  async logout(): Promise<void> {
+    await this.http({
+      url: 'auth/logout',
+      method: 'PUT',
+      headers: {
+        Authorization: this.token
+      }
+    });
+    this.token = null;
   }
 }
