@@ -1,4 +1,3 @@
-/* eslint-disable functional/immutable-data */
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable functional/no-this-expression */
 /* eslint-disable functional/no-class */
@@ -6,14 +5,18 @@ import axios, { AxiosInstance } from 'axios';
 
 import ClientOptions from '../shared/clientOptions';
 
+import TokenProvider from './tokenProvider';
+
 export default class Auth {
   http: AxiosInstance;
-  token: string
+  tokenProvider: TokenProvider
 
-  constructor(options: ClientOptions) {
+  constructor(options: ClientOptions, tokenProvider: TokenProvider) {
     this.http = axios.create({
       baseURL: options.endpoint
     });
+
+    this.tokenProvider = tokenProvider
   }
 
   async login(email: string, password: string): Promise<string> {
@@ -25,7 +28,7 @@ export default class Auth {
         password,
       },
     });
-    this.token = data.token
+    this.tokenProvider.setToken(data.token);
     return data.token;
   }
 
@@ -34,9 +37,14 @@ export default class Auth {
       url: 'auth/logout',
       method: 'PUT',
       headers: {
-        Authorization: this.token
+        Authorization: this.tokenProvider.getToken()
       }
     });
-    this.token = null;
+
+    this.tokenProvider.removeToken();
+  }
+
+  getToken(): string|null {
+    return this.tokenProvider.getToken();
   }
 }

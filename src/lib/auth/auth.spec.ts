@@ -4,13 +4,16 @@ import test from 'ava';
 import config from '../../config';
 
 import Auth  from './auth';
+import TokenProvider from './tokenProvider';
 let auth: Auth;
 
 test.before(async () => {
   auth = new Auth({
     endpoint: config.apps.GEWAER_API,
     appKey: config.appkey,
-  });
+  },
+    new TokenProvider()
+  );
 });
 
 test('login user', async (t) => {
@@ -25,8 +28,8 @@ test('login fail', async (t) => {
 
 test('logout user', async (t) => {
   await auth.login(config.user, config.password);
-  t.is(typeof auth.token, 'string');
+  t.is(typeof auth.getToken(), 'string');
 
   await auth.logout();
-  t.is(auth.token, null);
+  t.is(auth.getToken(), null);
 });
