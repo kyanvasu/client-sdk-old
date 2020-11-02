@@ -7,6 +7,8 @@ import { EventEmitter } from 'tsee';
 
 import ClientOptions from '../shared/clientOptions';
 
+import TokenProvider from './tokenProvider';
+
 type AuthEvents = {
   loggedIn: (token: string) => void,
   loggedOut: () => void
@@ -14,13 +16,17 @@ type AuthEvents = {
 
 
 export default class Auth extends EventEmitter<AuthEvents>{
-  http: AxiosInstance;
 
-  constructor(options: ClientOptions) {
+  http: AxiosInstance;
+  tokenProvider: TokenProvider
+
+  constructor(options: ClientOptions, tokenProvider: TokenProvider) {
     super()
     this.http = axios.create({
       baseURL: options.endpoint
     });
+
+    this.tokenProvider = tokenProvider
   }
 
   async login(email: string, password: string): Promise<string> {
@@ -32,7 +38,25 @@ export default class Auth extends EventEmitter<AuthEvents>{
         password,
       },
     });
+    this.tokenProvider.setToken(data.token);
     this.emit('loggedIn', data.token);
     return data.token;
+  }
+
+  async logout(): Promise<void> {
+    await this.http({
+      url: 'auth/logout',
+      method: 'PUT',
+      headers: {
+        Authorization: this.tokenProvider.getToken()
+      }
+    });
+
+    this.tokenProvider.removeToken();
+    this.emit('loggedOut')
+  }
+
+  getToken(): string|null {
+    return this.tokenProvider.getToken();
   }
 }
