@@ -31,5 +31,12 @@ test('logout user', async (t) => {
   t.is(typeof auth.getToken(), 'string');
 
   await auth.logout();
-  t.is(auth.getToken(), null);
+  t.falsy(auth.getToken())
+});
+
+test('login from cookies', async (t) => {
+  const token =  await auth.login(config.user, config.password);
+  await auth.logout();
+  auth.tokenProvider.setToken(token);
+  t.assert(auth.getToken())
 });

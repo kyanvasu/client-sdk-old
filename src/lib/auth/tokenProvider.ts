@@ -5,7 +5,9 @@ import Cookie from "js-cookie";
 
 export default class TokenProvider {
   setToken(token: string): void{
-    Cookie.set("Kanvas:token", token)
+    if (token) {
+      Cookie.set("Kanvas:token", token)
+    }
   }
 
   removeToken(): void {
