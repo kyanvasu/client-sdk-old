@@ -14,6 +14,9 @@ test.before(async () => {
 });
 
 test('login user', async (t) => {
+  auth.on('loggedIn', (token) => {
+    t.assert(token)
+  })
   const token = await auth.login(config.user, config.password);
   t.is(typeof token, 'string');
 });
