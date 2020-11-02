@@ -16,7 +16,6 @@ type AuthEvents = {
 
 
 export default class Auth extends EventEmitter<AuthEvents>{
-
   http: AxiosInstance;
   tokenProvider: TokenProvider
 

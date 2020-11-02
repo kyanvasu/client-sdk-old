@@ -14,7 +14,6 @@ export default class TokenProvider {
   setToken(token: string, config?: Cookie.CookieAttributes ): void{
     if (token) {
       const expires = config && config.expires ? new Date(config.expires) : null;
-      console.log('hi')
       Cookie.set("token", token, {expires, path: "/", domain: this.config.domain });
     }
   }
