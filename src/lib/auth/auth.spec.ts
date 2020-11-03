@@ -18,7 +18,7 @@ test.before(async () => {
   );
 });
 
-test('login user', async (t) => {
+test('login success', async (t) => {
   auth.on('loggedIn', (token) => {
     t.assert(token)
   })
@@ -26,17 +26,14 @@ test('login user', async (t) => {
   t.is(typeof token, 'string');
 });
 
-test('login fail', async (t) => {
-  const error = await t.throwsAsync(auth.login(config.user, "bad password"))
+test('login fail: Email is not registered', async (t) => {
+  const error = await t.throwsAsync(auth.login("notemail@gmail.com", config.password))
   t.is(error.message, "Request failed with status code 404")
 });
 
-test('logout user', async (t) => {
-  await auth.login(config.user, config.password);
-  t.is(typeof auth.getToken(), 'string');
-
-  await auth.logout();
-  t.falsy(auth.getToken())
+test('login fail: Wrong credentials', async (t) => {
+  const error = await t.throwsAsync(auth.login(config.user, "bad password"))
+  t.is(error.message, "Request failed with status code 404")
 });
 
 test('login from cookies', async (t) => {
@@ -44,4 +41,13 @@ test('login from cookies', async (t) => {
   await auth.logout();
   auth.tokenProvider.setToken(token);
   t.assert(auth.getToken())
+});
+
+
+test('logout user', async (t) => {
+  await auth.login(config.user, config.password);
+  t.is(typeof auth.getToken(), 'string');
+
+  await auth.logout();
+  t.falsy(auth.getToken())
 });
