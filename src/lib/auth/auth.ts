@@ -1,29 +1,61 @@
+/* eslint-disable functional/no-return-void */
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable functional/no-this-expression */
 /* eslint-disable functional/no-class */
 import axios, { AxiosInstance } from 'axios';
+import { EventEmitter } from 'tsee';
 
 import ClientOptions from '../shared/clientOptions';
 
-export default class Auth {
-  http: AxiosInstance;
+import TokenProvider from './tokenProvider';
 
-  constructor(options: ClientOptions) {
+type AuthEvents = {
+  loggedIn: (token: string) => void,
+  loggedOut: () => void
+}
+
+
+export default class Auth extends EventEmitter<AuthEvents>{
+  http: AxiosInstance;
+  tokenProvider: TokenProvider
+
+  constructor(options: ClientOptions, tokenProvider: TokenProvider) {
+    super()
     this.http = axios.create({
       baseURL: options.endpoint
     });
+
+    this.tokenProvider = tokenProvider
   }
 
-  login(email: string, password: string): Promise<string> {
-    return this.http({
+  async login(email: string, password: string): Promise<string> {
+    const { data } = await this.http({
       url: `/auth`,
       method: 'POST',
       data: {
         email,
         password,
       },
-    }).then(async ({ data }) => {
-      return data.token
     });
+    this.tokenProvider.setToken(data.token);
+    this.emit('loggedIn', data.token);
+    return data.token;
+  }
+
+  async logout(): Promise<void> {
+    await this.http({
+      url: 'auth/logout',
+      method: 'PUT',
+      headers: {
+        Authorization: this.tokenProvider.getToken()
+      }
+    });
+
+    this.tokenProvider.removeToken();
+    this.emit('loggedOut')
+  }
+
+  getToken(): string|null {
+    return this.tokenProvider.getToken();
   }
 }
