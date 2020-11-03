@@ -1,20 +1,28 @@
+/* eslint-disable functional/no-this-expression */
 /* eslint-disable functional/no-return-void */
 /* eslint-disable functional/no-class */
 // eslint-disable functional/prefer-readonly-type
 import Cookie from "js-cookie";
 
 export default class TokenProvider {
-  setToken(token: string): void{
+  readonly config: Cookie.CookieAttributes;
+
+  constructor(config: Cookie.CookieAttributes) {
+    this.config = config
+  }
+
+  setToken(token: string, config?: Cookie.CookieAttributes ): void{
     if (token) {
-      Cookie.set("Kanvas:token", token)
+      const expires = config && config.expires ? new Date(config.expires) : null;
+      Cookie.set("token", token, {expires, path: "/", domain: this.config.domain });
     }
   }
 
   removeToken(): void {
-    Cookie.remove("Kanvas:token")
+    Cookie.remove("token", { path: "/", domain: this.config.domain })
   }
 
   getToken(): string|null {
-    return Cookie.get("Kanvas:token") || null
+    return Cookie.get("token") || null
   }
 }

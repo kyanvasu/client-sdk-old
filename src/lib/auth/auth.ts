@@ -1,17 +1,26 @@
+/* eslint-disable functional/no-return-void */
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable functional/no-this-expression */
 /* eslint-disable functional/no-class */
 import axios, { AxiosInstance } from 'axios';
+import { EventEmitter } from 'tsee';
 
 import ClientOptions from '../shared/clientOptions';
 
 import TokenProvider from './tokenProvider';
 
-export default class Auth {
+type AuthEvents = {
+  loggedIn: (token: string) => void,
+  loggedOut: () => void
+}
+
+
+export default class Auth extends EventEmitter<AuthEvents>{
   http: AxiosInstance;
   tokenProvider: TokenProvider
 
   constructor(options: ClientOptions, tokenProvider: TokenProvider) {
+    super()
     this.http = axios.create({
       baseURL: options.endpoint
     });
@@ -29,6 +38,7 @@ export default class Auth {
       },
     });
     this.tokenProvider.setToken(data.token);
+    this.emit('loggedIn', data.token);
     return data.token;
   }
 
@@ -42,6 +52,7 @@ export default class Auth {
     });
 
     this.tokenProvider.removeToken();
+    this.emit('loggedOut')
   }
 
   getToken(): string|null {
