@@ -2,11 +2,10 @@
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable functional/no-this-expression */
 /* eslint-disable functional/no-class */
-import axios, { AxiosInstance } from 'axios';
+import qs from "qs";
 import { EventEmitter } from 'tsee';
-
 import ClientOptions from '../shared/clientOptions';
-
+import HttpClient from '../shared/httpClient';
 import TokenProvider from './tokenProvider';
 
 type AuthEvents = {
@@ -14,22 +13,28 @@ type AuthEvents = {
   loggedOut: () => void
 }
 
+type RegistrationForm = {
+  firstname: string;
+  lastname: string;
+  email: string;
+  password: string;
+  default_company: string;
+  verify_password: string;
+};
 
 export default class Auth extends EventEmitter<AuthEvents>{
-  http: AxiosInstance;
+  http: HttpClient;
   tokenProvider: TokenProvider
 
   constructor(options: ClientOptions, tokenProvider: TokenProvider) {
     super()
-    this.http = axios.create({
-      baseURL: options.endpoint
-    });
+    this.http = new HttpClient(options, tokenProvider);
 
     this.tokenProvider = tokenProvider
   }
 
   async login(email: string, password: string): Promise<string> {
-    const { data } = await this.http({
+    const data = await this.http.request({
       url: `/auth`,
       method: 'POST',
       data: {
@@ -43,7 +48,7 @@ export default class Auth extends EventEmitter<AuthEvents>{
   }
 
   async logout(): Promise<void> {
-    await this.http({
+    await this.http.request({
       url: 'auth/logout',
       method: 'PUT',
       headers: {
@@ -53,6 +58,24 @@ export default class Auth extends EventEmitter<AuthEvents>{
 
     this.tokenProvider.removeToken();
     this.emit('loggedOut')
+  }
+
+  async register(formData: RegistrationForm): Promise<string> {
+    const form = qs.stringify(formData);
+
+    return this.http.request({
+      url: `/users`,
+      method: 'POST',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      data: form,
+    })
+      .then(( data ) => {
+        this.tokenProvider.setToken(data.session.token);
+        this.emit('loggedIn', data.session.token);
+        return data.session.token;
+      })
   }
 
   getToken(): string|null {
