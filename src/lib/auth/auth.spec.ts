@@ -1,7 +1,6 @@
 /* eslint-disable functional/no-let */
 import test from 'ava';
 import sinon, { SinonSandbox } from 'sinon';
-
 import config from '../../config';
 import KanvasErrorAPI from '../shared/KanvasErrorAPI';
 
@@ -17,7 +16,7 @@ test.before(async () => {
       appKey: config.appkey,
     },
     new TokenProvider({
-      domain: config.domain || null,
+      domain: config.domain || null
     })
   );
 

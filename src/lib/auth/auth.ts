@@ -4,10 +4,8 @@
 /* eslint-disable functional/no-class */
 import qs from "qs";
 import { EventEmitter } from 'tsee';
-
 import ClientOptions from '../shared/clientOptions';
 import HttpClient from '../shared/httpClient';
-
 import TokenProvider from './tokenProvider';
 
 type AuthEvents = {

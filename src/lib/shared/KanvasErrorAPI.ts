@@ -13,10 +13,10 @@ class KanvasErrorAPI extends Error {
   readonly code: number|string;
 
   constructor(error: AxiosError) {
-    super()
-    this.errors = error.response.data.errors
+    super();
+    this.errors = error.response.data.errors;
     this.code = error.code;
-    this.message = error.message
+    this.message = error.message;
   }
 };
 export default KanvasErrorAPI;
