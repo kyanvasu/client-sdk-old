@@ -2,16 +2,16 @@
 /* eslint-disable functional/prefer-readonly-type */
 /* eslint-disable functional/no-this-expression */
 /* eslint-disable functional/no-class */
-import qs from "qs";
+import qs from 'qs';
 import { EventEmitter } from 'tsee';
 import ClientOptions from '../shared/clientOptions';
 import HttpClient from '../shared/httpClient';
 import TokenProvider from './tokenProvider';
 
 type AuthEvents = {
-  loggedIn: (token: string) => void,
-  loggedOut: () => void
-}
+  loggedIn: (token: string) => void;
+  loggedOut: () => void;
+};
 
 type RegistrationForm = {
   firstname: string;
@@ -22,15 +22,14 @@ type RegistrationForm = {
   verify_password: string;
 };
 
-export default class Auth extends EventEmitter<AuthEvents>{
+export default class Auth extends EventEmitter<AuthEvents> {
   http: HttpClient;
-  tokenProvider: TokenProvider
+  tokenProvider: TokenProvider;
 
   constructor(options: ClientOptions, tokenProvider: TokenProvider) {
-    super()
+    super();
     this.http = new HttpClient(options, tokenProvider);
-
-    this.tokenProvider = tokenProvider
+    this.tokenProvider = tokenProvider;
   }
 
   async login(email: string, password: string): Promise<string> {
@@ -51,34 +50,57 @@ export default class Auth extends EventEmitter<AuthEvents>{
     await this.http.request({
       url: 'auth/logout',
       method: 'PUT',
-      headers: {
-        Authorization: this.tokenProvider.getToken()
-      }
     });
 
     this.tokenProvider.removeToken();
-    this.emit('loggedOut')
+    this.emit('loggedOut');
   }
 
   async register(formData: RegistrationForm): Promise<string> {
     const form = qs.stringify(formData);
 
-    return this.http.request({
-      url: `/users`,
-      method: 'POST',
-      headers: {
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-      data: form,
-    })
-      .then(( data ) => {
+    return this.http
+      .request({
+        url: `/users`,
+        method: 'POST',
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded',
+        },
+        data: form,
+      })
+      .then((data) => {
         this.tokenProvider.setToken(data.session.token);
         this.emit('loggedIn', data.session.token);
         return data.session.token;
-      })
+      });
   }
 
-  getToken(): string|null {
+  async sendPasswordResetEmail(email: string): Promise<void> {
+    return this.http.request({
+      url: '/auth/forgot',
+      method: 'POST',
+      data: {
+        email,
+      },
+    });
+  }
+
+  resetPassword(
+    newPassword: string,
+    verifyPassword: string,
+    code: string
+  ): Promise<void> {
+    return this.http.request({
+      url: `/auth/reset/${code}`,
+      method: 'POST',
+      data: {
+        new_password: newPassword,
+        verify_password: verifyPassword,
+      },
+    });
+  }
+
+  getToken(): string | null {
     return this.tokenProvider.getToken();
   }
 }
