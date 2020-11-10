@@ -9,39 +9,39 @@ import KanvasErrorAPI from './KanvasErrorAPI';
 import ClientOptions from './clientOptions';
 
 export default class HttpClient {
-  readonly http: AxiosInstance;
-  readonly tokenProvider: TokenProvider;
+	readonly http: AxiosInstance;
+	readonly tokenProvider: TokenProvider;
 
-  constructor(options: ClientOptions, tokenProvider: TokenProvider) {
-    this.http = axios.create({
-      baseURL: options.endpoint,
-    });
-    this.tokenProvider = tokenProvider;
-  }
+	constructor(options: ClientOptions, tokenProvider: TokenProvider) {
+		this.http = axios.create({
+			baseURL: options.endpoint,
+		});
+		this.tokenProvider = tokenProvider;
+	}
 
-  async request(config: AxiosRequestConfig, isAuthorized = true): Promise<any> {
-    const requestConfig = this.getRequestConfig(config, isAuthorized);
-    const { data } = await this.http.request(requestConfig).catch((error) => {
-      throw new KanvasErrorAPI(error);
-    });
+	async request(config: AxiosRequestConfig, isAuthorized = true): Promise<any> {
+		const requestConfig = this.getRequestConfig(config, isAuthorized);
+		const { data } = await this.http.request(requestConfig).catch((error) => {
+			throw new KanvasErrorAPI(error);
+		});
 
-    return data;
-  }
+		return data;
+	}
 
-  getRequestConfig(
-    config: AxiosRequestConfig,
-    isAuthorized: boolean
-  ): AxiosRequestConfig {
-    const token = this.tokenProvider.getToken();
+	getRequestConfig(
+		config: AxiosRequestConfig,
+		isAuthorized: boolean
+	): AxiosRequestConfig {
+		const token = this.tokenProvider.getToken();
 
-    if (isAuthorized && token) {
-      const userHeaders = config.headers || {};
-      const headers = {
-        Authorization: token,
-      };
-      config.headers = Object.assign(userHeaders, headers);
-    }
+		if (isAuthorized && token) {
+			const userHeaders = config.headers || {};
+			const headers = {
+				Authorization: token
+			};
+			config.headers = Object.assign(userHeaders, headers);
+		}
 
-    return config;
-  }
+		return config;
+	}
 }

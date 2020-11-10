@@ -27,7 +27,7 @@ jobs:
       - run: npm run build --if-present
       - run: npm run test:unit
     env:
-      ENDPOINT: ${{ secrets.APP_ENDPOINT }}
+      APP_ENDPOINT: ${{ secrets.APP_ENDPOINT }}
       APP_KEY: ${{ secrets.APP_KEY }}
       APP_USER: ${{ secrets.APP_USER }}
       APP_PASS: ${{ secrets.APP_PASS }}
