@@ -5,24 +5,24 @@
 import Cookie from "js-cookie";
 
 export default class TokenProvider {
-  readonly config: Cookie.CookieAttributes;
+	readonly config: Cookie.CookieAttributes;
 
-  constructor(config: Cookie.CookieAttributes) {
-    this.config = config
-  }
+	constructor(config: Cookie.CookieAttributes) {
+		this.config = config;
+	}
 
-  setToken(token: string, config?: Cookie.CookieAttributes ): void{
-    if (token) {
-      const expires = config && config.expires ? new Date(config.expires) : null;
-      Cookie.set("token", token, {expires, path: "/", domain: this.config.domain });
-    }
-  }
+	setToken(token: string, config?: Cookie.CookieAttributes ): void{
+		if (token) {
+			const expires = config && config.expires ? new Date(config.expires) : null;
+			Cookie.set("token", token, {expires, path: "/", domain: this.config.domain });
+		}
+	}
 
-  removeToken(): void {
-    Cookie.remove("token", { path: "/", domain: this.config.domain })
-  }
+	removeToken(): void {
+		Cookie.remove("token", { path: "/", domain: this.config.domain });
+	}
 
-  getToken(): string|null {
-    return Cookie.get("token") || null
-  }
+	getToken(): string|null {
+		return Cookie.get("token") || null;
+	}
 }
