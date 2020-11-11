@@ -12,7 +12,7 @@ export default class HttpClient {
 	readonly http: AxiosInstance;
 	readonly tokenProvider: TokenProvider;
 
-	constructor(options: ClientOptions, tokenProvider: TokenProvider) {
+	constructor(options: ClientOptions, tokenProvider?: TokenProvider) {
 		this.http = axios.create({
 			baseURL: options.endpoint,
 		});
@@ -32,9 +32,8 @@ export default class HttpClient {
 		config: AxiosRequestConfig,
 		isAuthorized: boolean
 	): AxiosRequestConfig {
-		const token = this.tokenProvider.getToken();
-
-		if (isAuthorized && token) {
+		if (isAuthorized) {
+			const token = this.tokenProvider.getToken();
 			const userHeaders = config.headers || {};
 			const headers = {
 				Authorization: token
