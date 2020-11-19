@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>HttpClient | client-sdk</title>
+	<title>BaseResource | client-sdk</title>
 	<meta name="description" content="Documentation for client-sdk">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="httpclient.html">HttpClient</a>
+					<a href="baseresource.html">BaseResource</a>
 				</li>
 			</ul>
-			<h1>Class HttpClient</h1>
+			<h1>Class BaseResource</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">HttpClient</span>
+						<span class="target">BaseResource</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="menu.html" class="tsd-signature-type">Menu</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -81,21 +86,14 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="httpclient.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="baseresource.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="httpclient.html#http" class="tsd-kind-icon">http</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="httpclient.html#tokenprovider" class="tsd-kind-icon">token<wbr>Provider</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="httpclient.html#getrequestconfig" class="tsd-kind-icon">get<wbr>Request<wbr>Config</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="httpclient.html#request" class="tsd-kind-icon">request</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="baseresource.html#http" class="tsd-kind-icon">http</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="baseresource.html#tokenprovider" class="tsd-kind-icon">token<wbr>Provider</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,13 +105,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Http<wbr>Client<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../globals.html#clientoptions" class="tsd-signature-type">ClientOptions</a>, tokenProvider<span class="tsd-signature-symbol">?: </span><a href="tokenprovider.html" class="tsd-signature-type">TokenProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="httpclient.html" class="tsd-signature-type">HttpClient</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Base<wbr>Resource<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../globals.html#clientoptions" class="tsd-signature-type">ClientOptions</a>, tokenProvider<span class="tsd-signature-symbol">: </span><a href="tokenprovider.html" class="tsd-signature-type">TokenProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="baseresource.html" class="tsd-signature-type">BaseResource</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/httpClient.ts#L13">src/lib/shared/httpClient.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/baseResource.ts#L10">src/lib/shared/baseResource.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -122,10 +120,10 @@
 									<h5>options: <a href="../globals.html#clientoptions" class="tsd-signature-type">ClientOptions</a></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> tokenProvider: <a href="tokenprovider.html" class="tsd-signature-type">TokenProvider</a></h5>
+									<h5>tokenProvider: <a href="tokenprovider.html" class="tsd-signature-type">TokenProvider</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="httpclient.html" class="tsd-signature-type">HttpClient</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="baseresource.html" class="tsd-signature-type">BaseResource</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -134,78 +132,23 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="http" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> http</h3>
-					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span></div>
+					<h3>http</h3>
+					<div class="tsd-signature tsd-kind-icon">http<span class="tsd-signature-symbol">:</span> <a href="httpclient.html" class="tsd-signature-type">HttpClient</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/httpClient.ts#L12">src/lib/shared/httpClient.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/baseResource.ts#L9">src/lib/shared/baseResource.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="tokenprovider" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> token<wbr>Provider</h3>
+					<h3>token<wbr>Provider</h3>
 					<div class="tsd-signature tsd-kind-icon">token<wbr>Provider<span class="tsd-signature-symbol">:</span> <a href="tokenprovider.html" class="tsd-signature-type">TokenProvider</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/httpClient.ts#L13">src/lib/shared/httpClient.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/baseResource.ts#L10">src/lib/shared/baseResource.ts:10</a></li>
 						</ul>
 					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getrequestconfig" class="tsd-anchor"></a>
-					<h3>get<wbr>Request<wbr>Config</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Request<wbr>Config<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosRequestConfig</span>, isAuthorized<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosRequestConfig</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/httpClient.ts#L31">src/lib/shared/httpClient.ts:31</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>config: <span class="tsd-signature-type">AxiosRequestConfig</span></h5>
-								</li>
-								<li>
-									<h5>isAuthorized: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosRequestConfig</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="request" class="tsd-anchor"></a>
-					<h3>request</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">request<span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosRequestConfig</span>, isAuthorized<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/httpClient.ts#L22">src/lib/shared/httpClient.ts:22</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>config: <span class="tsd-signature-type">AxiosRequestConfig</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> isAuthorized: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -222,33 +165,27 @@
 					<li class=" tsd-kind-class">
 						<a href="auth.html" class="tsd-kind-icon">Auth</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="baseresource.html" class="tsd-kind-icon">Base<wbr>Resource</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="httpclient.html" class="tsd-kind-icon">Http<wbr>Client</a>
+						<a href="baseresource.html" class="tsd-kind-icon">Base<wbr>Resource</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="httpclient.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="baseresource.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="httpclient.html#http" class="tsd-kind-icon">http</a>
+								<a href="baseresource.html#http" class="tsd-kind-icon">http</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="httpclient.html#tokenprovider" class="tsd-kind-icon">token<wbr>Provider</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="httpclient.html#getrequestconfig" class="tsd-kind-icon">get<wbr>Request<wbr>Config</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="httpclient.html#request" class="tsd-kind-icon">request</a>
+								<a href="baseresource.html#tokenprovider" class="tsd-kind-icon">token<wbr>Provider</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="httpclient.html" class="tsd-kind-icon">Http<wbr>Client</a>
+					</li>
 					<li class=" tsd-kind-class">
 						<a href="kanvaserrorapi.html" class="tsd-kind-icon">Kanvas<wbr>ErrorAPI</a>
 					</li>

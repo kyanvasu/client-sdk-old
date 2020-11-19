@@ -71,19 +71,27 @@
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class"><a href="classes/auth.html" class="tsd-kind-icon">Auth</a></li>
+								<li class="tsd-kind-class"><a href="classes/baseresource.html" class="tsd-kind-icon">Base<wbr>Resource</a></li>
 								<li class="tsd-kind-class"><a href="classes/httpclient.html" class="tsd-kind-icon">Http<wbr>Client</a></li>
 								<li class="tsd-kind-class"><a href="classes/kanvaserrorapi.html" class="tsd-kind-icon">Kanvas<wbr>ErrorAPI</a></li>
 								<li class="tsd-kind-class"><a href="classes/kanvassdk.html" class="tsd-kind-icon">KanvasSDK</a></li>
+								<li class="tsd-kind-class"><a href="classes/menu.html" class="tsd-kind-icon">Menu</a></li>
+								<li class="tsd-kind-class"><a href="classes/settings.html" class="tsd-kind-icon">Settings</a></li>
 								<li class="tsd-kind-class"><a href="classes/tokenprovider.html" class="tsd-kind-icon">Token<wbr>Provider</a></li>
+								<li class="tsd-kind-class"><a href="classes/users.html" class="tsd-kind-icon">Users</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="globals.html#appsettings" class="tsd-kind-icon">App<wbr>Settings</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#authevents" class="tsd-kind-icon">Auth<wbr>Events</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#clientoptions" class="tsd-kind-icon">Client<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#kanvaserror" class="tsd-kind-icon">Kanvas<wbr>Error</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#menuresource" class="tsd-kind-icon">Menu<wbr>Resource</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#registrationform" class="tsd-kind-icon">Registration<wbr>Form</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#user" class="tsd-kind-icon">User</a></li>
+								<li class="tsd-kind-type-alias"><a href="globals.html#link" class="tsd-kind-icon">link</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -98,12 +106,80 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="appsettings" class="tsd-anchor"></a>
+					<h3>App<wbr>Settings</h3>
+					<div class="tsd-signature tsd-kind-icon">App<wbr>Settings<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>description<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>settings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>allow_user_registration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>background_image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>base_color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>currency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>default_admin_role<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>default_sidebar_state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>filesystem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>language<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>logo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>public_images<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>secondary_color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>show_notifications<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>timezone<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>user-settings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/application/settings/settings.ts#L7">src/lib/application/settings/settings.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>description<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>settings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>allow_user_registration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>background_image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>base_color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>currency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>default_admin_role<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>default_sidebar_state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>filesystem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>language<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>logo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>public_images<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>secondary_color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>show_notifications<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>timezone<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>user-settings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>allow_<wbr>user_<wbr>registration<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>background_<wbr>image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>base_<wbr>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>currency<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>default_<wbr>admin_<wbr>role<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>default_<wbr>sidebar_<wbr>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>filesystem<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>language<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>logo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>public_<wbr>images<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>secondary_<wbr>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>show_<wbr>notifications<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>timezone<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>user-<wbr>settings<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="authevents" class="tsd-anchor"></a>
 					<h3>Auth<wbr>Events</h3>
 					<div class="tsd-signature tsd-kind-icon">Auth<wbr>Events<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>loggedIn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">; </span>loggedOut<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f7faa21/src/lib/auth/auth.ts#L11">src/lib/auth/auth.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/auth/auth.ts#L11">src/lib/auth/auth.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -154,7 +230,7 @@
 					<div class="tsd-signature tsd-kind-icon">Client<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>appKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>cookies<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>domain<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f7faa21/src/lib/shared/clientOptions.ts#L1">src/lib/shared/clientOptions.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/clientOptions.ts#L1">src/lib/shared/clientOptions.ts:1</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -181,7 +257,7 @@
 					<div class="tsd-signature tsd-kind-icon">Kanvas<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f7faa21/src/lib/shared/KanvasErrorAPI.ts#L5">src/lib/shared/KanvasErrorAPI.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/shared/KanvasErrorAPI.ts#L5">src/lib/shared/KanvasErrorAPI.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -200,12 +276,51 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="menuresource" class="tsd-anchor"></a>
+					<h3>Menu<wbr>Resource</h3>
+					<div class="tsd-signature tsd-kind-icon">Menu<wbr>Resource<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>apps_id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>created_at<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>is_deleted<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>sidebar<span class="tsd-signature-symbol">: </span><a href="globals.html#link" class="tsd-signature-type">link</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>slug<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"main"</span><span class="tsd-signature-symbol">; </span>updated_at<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/menu/menu.ts#L6">src/lib/menu/menu.ts:6</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>apps_<wbr>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>created_<wbr>at<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>is_<wbr>deleted<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>sidebar<span class="tsd-signature-symbol">: </span><a href="globals.html#link" class="tsd-signature-type">link</a><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>slug<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"main"</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>updated_<wbr>at<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="registrationform" class="tsd-anchor"></a>
 					<h3>Registration<wbr>Form</h3>
 					<div class="tsd-signature tsd-kind-icon">Registration<wbr>Form<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>default_company<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>firstname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>lastname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>verify_password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f7faa21/src/lib/auth/auth.ts#L16">src/lib/auth/auth.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/auth/auth.ts#L16">src/lib/auth/auth.ts:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -232,6 +347,96 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="user" class="tsd-anchor"></a>
+					<h3>User</h3>
+					<div class="tsd-signature tsd-kind-icon">User<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>firstname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>lastname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/users/users.ts#L8">src/lib/users/users.ts:8</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>firstname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>lastname<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="link" class="tsd-anchor"></a>
+					<h3>link</h3>
+					<div class="tsd-signature tsd-kind-icon">link<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>created_at<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">; </span>icon_class<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>icon_url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>is_deleted<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>is_published<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>links<span class="tsd-signature-symbol">?: </span><a href="globals.html#link" class="tsd-signature-type">link</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>menus_id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>parent_id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>position<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>route<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>slug<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>system_modules_id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>updated_at<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">; </span>url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/lib/menu/menu.ts#L17">src/lib/menu/menu.ts:17</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> created_<wbr>at<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> icon_<wbr>class<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> icon_<wbr>url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> is_<wbr>deleted<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> is_<wbr>published<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> links<span class="tsd-signature-symbol">?: </span><a href="globals.html#link" class="tsd-signature-type">link</a><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> menus_<wbr>id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> parent_<wbr>id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> position<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> route<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> slug<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> system_<wbr>modules_<wbr>id<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> updated_<wbr>at<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Date</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
@@ -241,7 +446,7 @@
 					<div class="tsd-signature tsd-kind-icon">browser<wbr>Env<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = require(&#x27;browser-env&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f7faa21/src/_setup-browser-env.ts#L2">src/_setup-browser-env.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/kyanvasu/client-sdk/blob/f6beaad/src/_setup-browser-env.ts#L2">src/_setup-browser-env.ts:2</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -261,6 +466,9 @@
 						<a href="classes/auth.html" class="tsd-kind-icon">Auth</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/baseresource.html" class="tsd-kind-icon">Base<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/httpclient.html" class="tsd-kind-icon">Http<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -270,7 +478,19 @@
 						<a href="classes/kanvassdk.html" class="tsd-kind-icon">KanvasSDK</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/menu.html" class="tsd-kind-icon">Menu</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/settings.html" class="tsd-kind-icon">Settings</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/tokenprovider.html" class="tsd-kind-icon">Token<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/users.html" class="tsd-kind-icon">Users</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#appsettings" class="tsd-kind-icon">App<wbr>Settings</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#authevents" class="tsd-kind-icon">Auth<wbr>Events</a>
@@ -282,7 +502,16 @@
 						<a href="globals.html#kanvaserror" class="tsd-kind-icon">Kanvas<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#menuresource" class="tsd-kind-icon">Menu<wbr>Resource</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#registrationform" class="tsd-kind-icon">Registration<wbr>Form</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#user" class="tsd-kind-icon">User</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#link" class="tsd-kind-icon">link</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#browserenv" class="tsd-kind-icon">browser<wbr>Env</a>
@@ -302,6 +531,7 @@
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
 			</ul>
 			<ul class="tsd-legend">
